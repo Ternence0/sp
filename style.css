@@ -48,20 +48,6 @@ button {
   -moz-font-feature-settings: "liga", "kern";
 }
 
-input {
-	display: block;
-}
-
-h1 small,
-h2 small,
-h3 small,
-h4 small,
-h5 small,
-h6 small,
-p small {
-  color: #334B5A;
-  font-size: 1rem;
-}
 
 h1,
 h2,
@@ -70,12 +56,24 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  line-height: 1
+  line-height: 1;
+  font-family: jf,"cwTeXYen","Courier New",monospace, sans-serif
 }
-input::-webkit-input-placeholder{
-	font-family: "jf","cwTeXYen",monospace,"Noto Sans CJK","Courier New", sans-serif;
-	font-weight: 600
+
+
+button, input {
+  max-height: 100%;
+  max-width: 100%;
+  width: 1000px;
+  height: 60px
 }
+
+input {
+  font-size: 2rem;
+  caret-color: #FF1744;
+  outline: none
+}
+
 .table_form tr:nth-child(even) {
     background: #CCC
 }
@@ -151,10 +149,19 @@ a img {
   max-height: 100%;
 }
 
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto
+}
+
 p {
   color: #666;
   font-size: 2.286rem;
   line-height: 1.5;
+  margin: 0 0 10px 5px
 }
 
 button a {
@@ -797,8 +804,12 @@ table img{
   width:100%;
 }
 
+.clean img {
+  vertical-align: inherit
+}
+
 .wrap {
-  margin-top: 80px;
+  /margin-top: 80px;
 }
 
 h2.title {
@@ -2091,7 +2102,7 @@ h2.word {
   }
 
   .wrap {
-    margin-top: 52px;
+    /margin-top: 52px;
   }
 
   h2.title {
@@ -2190,6 +2201,36 @@ h2.word {
   }
 }
 
+
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent
+}
+
+.navbar-header {
+  text-align: center;
+  float: inherit
+}
+
+.navbar-header :hover {
+  transform: scale(1.01,1.01); transition:all 0.2s ease-in
+}
+
+.navbar-header :active {
+  opacity: 0.8
+}
+
+img.icon :hover {
+  opacity: 0.5
+}
+
+.icon+img :active {
+  opacity: 0.5
+}
+
 .buttons {
   margin: 20px 20px;
   display: inline-block
@@ -2213,19 +2254,19 @@ h2.word {
 }
 
 .btn_large {
-	transform: scale(1,1);
-	padding-bottom: 20px
+  transform: scale(1,1);
+  padding-bottom: 20px
 }
 
 .btn_large :hover{
-	transform: scale(1.02,1.02);transition:all 0.3s ease-out
+  transform: scale(1.02,1.02);transition:all 0.3s ease-out
 }
 
 .precautions p {
-	font-size: 20pt;
-	font-weight: 500;
-	text-indent: -16pt;
-    text-align:left
+  font-size: 20pt;
+  font-weight: 500;
+  text-indent: -16pt;
+  text-align:left
 }
 .share {
   display:inline-table;
@@ -2237,7 +2278,7 @@ h2.word {
 }
 
 .btn_small :hover{
-	transform: scale(1.05,1.05);transition:all 0.25s ease-out
+  transform: scale(1.05,1.05);transition:all 0.25s ease-out
 }
 
 .btn.active.focus,
@@ -2283,13 +2324,54 @@ a.btn-default {
 }
 
 .awards {
-    position: absolute;
-    max-width: 100%;
-    padding-top: 38%;
-    margin-left: 33%;
-    margin-right: 33%;
-    border-radius: 35px;
-    text-align: center !important;
+  position: absolute;
+  max-width: 100%;
+  padding-top: 38%;
+  margin-left: 33%;
+  margin-right: 33%;
+  border-radius: 35px;
+  text-align: center !important;
+}
+
+.container {
+  width: 1320px
+}
+
+.tittle {
+  margin-top: 10px;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  position: relative
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
+.section-1{
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5)
+}
+
+.section-2{
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5)
+}
+
+.row {
+  background-color: #ffffff;
+  border-radius: 10px
 }
 
 .text_center1, .text_center2, .text_center3, .text_center4, .text_center5, .text_center6, .text_center7, .text_nav1, .text_nav2, .text_nav3, .text_nav4, .text_nav5, .text_nav6 {
@@ -2582,7 +2664,7 @@ table tr td {
 
 .banner {
   margin-top: -80px;
-  padding-bottom: 2vmin
+  padding-bottom: 5vmin
 }
 .labelfomat {
   display: inline-block;
@@ -2787,6 +2869,9 @@ table tr td {
     margin-bottom: -100px;
     padding-bottom: 80px;
   }
+  .container {
+    width: 1000px
+  }
   .index .collection {
     padding: 20px 0 100px 0
   }
@@ -2920,10 +3005,21 @@ table tr td {
   .index .collection {
     padding: 20px 0 100px 0
   }
-
+  .container {
+    width: 900px
+  }
+  .process {
+	width: 84%
+  }
+  .banner {
+    padding-bottom: 3vmin
+  }
   .btn .text_center1 {
     margin: 20px 185px;
     font-size: 2.8rem
+  }
+  input {
+    font-size: 1.8rem
   }
   h1.word {
       font-size: 1.8rem
@@ -3058,6 +3154,12 @@ table tr td {
 }
 
 @media(max-width: 991px) and (min-width: 767px) {
+  .tittle {
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 8px
+  }
   .buttons {
     margin: 12px 12px;
 	display: inline-block
@@ -3065,7 +3167,12 @@ table tr td {
   .section-3 .precautions {
     padding: 10px 0px 15px 25px
   }
-
+  .container {
+    width: 680px
+  }
+  .process {
+	width: 84%
+  }
   .link {
 	width:52px;
 	height: auto
@@ -3215,6 +3322,18 @@ table tr td {
 }
 
 @media ( max-width : 767px ) {
+  .tittle {
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 6px
+  }
+  .container {
+    max-width: 88%
+  }
+  .banner {
+    padding-bottom: 2vmin
+  }
   .index .serialnumber.section-3 {
     border-radius: 12px;
   }
@@ -3238,7 +3357,11 @@ table tr td {
     font-size: 4.2vw;
     letter-spacing: -0.1vw
   }
-
+	
+  input {
+    font-size: 1.5rem
+  }
+	
   .p_hight {
 	margin-top: -6.5vw
   }
@@ -3607,6 +3730,12 @@ table tr td {
   }
 }
 @media ( max-width : 480px ) {
+  .tittle {
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 4px
+  }
   p.center_left, p.center_right {
     font-size: 3.2vmin
   }
@@ -3619,6 +3748,12 @@ table tr td {
   }
   .center_right {
     margin: 31% 18.2%
+  }
+  input {
+    font-size: 1rem
+  }
+  button, input {
+    height: 36px
   }
   p {
     font-size: 12pt
@@ -3943,6 +4078,12 @@ table tr td {
   }
   .inv {
       width: 24%
+  }
+  input {
+    font-size: 0.8rem
+  }
+  button, input {
+    height: 30px
   }
   h1.word {
       font-size: 0.6rem
