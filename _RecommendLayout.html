@@ -1,0 +1,274 @@
+﻿@using RecommendWeb.App_Code;
+@{
+    string Remindmsg = "";
+    string Email = "";
+    string Phone = "";
+    string OtpExpireTimeSecond = System.Configuration.ConfigurationManager.AppSettings["OtpExpireTimeSecond"] == null ? "5" : System.Configuration.ConfigurationManager.AppSettings["OtpExpireTimeSecond"].ToString();
+
+    int intOtpExpireTimeSecond = 5;
+    try
+    {
+        intOtpExpireTimeSecond = Convert.ToInt32(OtpExpireTimeSecond);
+    }
+    catch { }
+}
+<!DOCTYPE html>
+
+<head>
+    <link href="~/Content/ACommon.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/Recommend/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/site.css" rel="stylesheet" />*@
+
+
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <script>
+        //  用cookie 紀錄網頁上次onscroll之位置
+
+        window.onload = function () {
+            var strCook = document.cookie;
+
+            if (strCook.indexOf("!~") != 0) {
+                var intS = strCook.indexOf("!~");
+                var intE = strCook.indexOf("~!");
+                var strPos = strCook.substring(intS + 2, intE);
+                document.documentElement.scrollTop = 0;
+                document.documentElement.scrollTop = strPos;
+            }
+        };
+
+        /*
+        $(document).scroll(function () {
+            alert(document.documentElement.scrollTop);
+        });
+        */
+    </script>
+
+    <script src="~/Scripts/lockScreen.js"></script>
+
+</head>
+<html>
+<body>
+
+
+    @RenderBody()
+    <!-- 彈出訊息區段 -->
+    @if (ViewBag.tAlertMessage != null && @ViewBag.tTitle != null)
+    {
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="height:200px">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel"><font color="white">@ViewBag.tTitle</font> </h4>
+                    </div>
+                    <div class="modal-body">
+                        <font size="3px"> @ViewBag.tAlertMessage</font>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-default-Layout" data-dismiss="modal">關閉</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    }
+    <!-- OTP區段 -->
+    @if (ViewBag.OTPtTitle != null)
+    {
+
+        try
+        {
+            Email = ViewBag.Email;
+            Phone = ViewBag.Phone;
+
+
+            string bPhone = Phone.Substring(0, 3) + "********";
+            string bEmail = Email.Substring(0, 3) + "********";
+
+
+            if (Email != "" && Email != "")
+            {
+                Remindmsg = "手機<span style=color:red>" + bPhone + "</span>及郵件<span style=color:red>" + bEmail + "</span>";
+            }
+            else if (Phone != "" && Email == "")
+            {
+                Remindmsg = "手機<span style=color:red>" + bPhone + "</span>";
+            }
+            else if (Email != "" && Phone == "")
+            {
+                Remindmsg = "郵件<span style=color:red>" + bEmail + "</span>";
+            }
+
+
+        }
+        catch { }
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="height:250px;">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel" style="text-align:center"><font color="white">@ViewBag.OTPtTitle</font> </h4>
+                    </div>
+                    <div class="modal-body" style="text-align:center">
+                        <div align="left">我們會發送OTP代碼至您的 @Html.Raw(Remindmsg)  請至您的手機(或E-Mail)，收取驗證碼以進行驗證，謝謝。若無法取得請洽服務人員</div>
+                        <span id="OTPErrMessageID" style="display:none;font-size:medium;color:red"></span>
+
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        @*<a id="SureLogin" onclick="SureLogin()"><h2>認證</h2></a>
+                            <a id="Checkotp" onclick="Checkotp()" style="display:none"><h2>確定</h2></a>*@
+                        <button type="button" id="SureLogin" class="btn btn-default" onclick="SureLogin()">認證</button>
+                        <button type="button" id="Checkotp" class="btn btn-default" onclick="Checkotp()" style="display:none">確定</button>
+                        <button type="button" id="Closeotp" class="btn btn-default" data-dismiss="modal">關閉</button>
+                        <div id="showtime"></div>
+                        <font size="3"><input type="text" id="OtpCode" name="OtpCode" value="" style="width:140px;height:25px;display:none">  </font>
+
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    }
+    <!-- 彈出訊息區段前端用 -->
+    <div class="modal fade" id="FontmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height:200px">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"><font color="white"><span id="MessageTitle"></span></font> </h4>
+                </div>
+                <div class="modal-body">
+                    <font size="3px"><span id="MessageBody"></span></font>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-default-Layout" data-dismiss="modal">關閉</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+</body>
+</html>
+
+
+
+<script>
+    $(document).ready()
+    {
+        $('#myModal').modal('toggle');
+    }
+    function AlertMessageM(Title, Message) {
+        $("#MessageTitle")[0].innerHTML = Title;
+        $("#MessageBody")[0].innerHTML = Message;
+        $('#FontmyModal').modal('toggle');
+    }
+
+    var second = '@intOtpExpireTimeSecond';
+    second = second * 60;
+    //登入發送OTP
+     var s = second ;
+    function SureLogin() {
+        lockScreen("請稍後........");
+        var remessage = "";
+        $("#OtpCode").show();
+        $("#showtime").show();
+        $("#SureLogin").hide();
+        $("#Checkotp").show();
+        unlockScreen();
+        s = second;
+        reciprocal();
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'text',
+                async: false,
+                url:'@ViewBag.OptLoginurl',
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: { Phone:'@Phone' , Email:'@Email'   }, success: function (result) {
+
+                    remessage = result;
+                    if (remessage == "") {
+
+                    }
+                    else {
+                        alert(remessage);
+
+                    }
+
+                }
+            });
+
+        }
+
+   // 檢查OTP代碼
+    function Checkotp() {
+           var OtpCode = $("#OtpCode").val();
+            var remessage = "";
+            $.ajax({
+                type: 'POST',
+                dataType: 'text',
+                async: false,
+                url:'@ViewBag.Posturl',
+                xhrFields: {
+                    withCredentials: true
+                },
+                data: { OtpCode: OtpCode}, success: function (result) {
+
+                    remessage = result;
+                    if (remessage == "OK") {
+
+                        //好友推薦頁所用
+                        try {
+                            $("#SearchTag").val("True");
+                            $("#GetDis").hide();
+                            $("#DiscountcodeTable").show();
+                        }
+                        catch (exception) {
+                            console.warn(exception);
+                       } 
+
+                        $("form").submit();
+
+
+                    }
+                    else {
+                        $("#OTPErrMessageID").show();
+                        $("#OTPErrMessageID")[0].innerHTML = remessage;
+
+                    }
+                }
+            });
+
+
+
+    }
+
+
+    function reciprocal() {
+        if (s == 0) {
+            $("#showtime").hide();
+            $("#SureLogin").show();
+            $("#Checkotp").hide();
+            $("#OtpCode").hide();
+
+
+        }
+        else {
+         var mm=parseInt(s/60)
+         var ss=s % 60
+
+            document.getElementById("showtime").innerHTML = mm+"分"+ ss + "秒<br>";
+            setTimeout(reciprocal, 1000);
+            s -= 1;
+        }
+}
+
+</script>
+
+
+
+
