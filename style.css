@@ -59,7 +59,7 @@ input {
   outline: none
 }
 .table_form tr:nth-child(even) {
-  background: #CCC
+  background: #d6d6d6
 }
 h1 {
   font-size: 2.9rem;
@@ -668,7 +668,7 @@ h2.word {
   background-size: 100%;
   background-image: url("img/bg_pc.jpg");
   background-attachment: local;
-  padding-bottom: 100px
+  padding-bottom: 60px
 }
 .index .serialnumber {
   margin: 20px auto 0 auto;
@@ -1622,9 +1622,6 @@ h2.word {
   .hidden-sm {
     display: none !important;
   }
-  .wrap {
-    /margin-top: 52px;
-  }
   h2.title {
     font-size: 2.571rem;
   }
@@ -1810,7 +1807,7 @@ a.btn-default {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  text-align: center
+  text-align: center;
 }
 .section-1 {
   background-color: #ffffff;
@@ -2071,7 +2068,8 @@ table tr td {
   border-radius: 15px
 }
 .top-buttons {
-  display: flow-root
+  display: flow-root;
+  padding-top: 20px
 }
 .link {
   width: 75px;
@@ -2091,7 +2089,7 @@ table tr td {
 }
 .labelform {
   display: inline-block;
-  margin: 30px 5px;
+  margin: 30px 5px 30px;
   padding-left: 5px;
   padding-right: 5px
 }
@@ -2118,7 +2116,7 @@ table tr td {
   font-family: "jf", "cwTeXYen", "Noto Sans CJK", "Courier New", monospace, sans-serif;
   font-weight: 900;
   display: inline-block;
-  height: 320px;
+  height: 330px;
   width: 500px;
   border: 1px solid #045CB3;
   border-radius: 12px;
@@ -2250,6 +2248,9 @@ table tr td {
   }
 }
 @media (max-width : 1439px) {
+  .labelform {
+    margin: 30px 5px 15px;
+  }
   .section-3 .precautions p {
     text-indent: -1.45rem
   }
@@ -2277,6 +2278,9 @@ table tr td {
   .process p {
     letter-spacing: -0.06rem;
     font-size: 1.5vw
+  }
+  .invcode {
+	height: 300px
   }
   h1.word {
     font-size: 2.4rem
@@ -2407,6 +2411,9 @@ table tr td {
   .btn .text_center1 {
     margin: 20px 185px;
     font-size: 2.8rem
+  }
+  .invcode {
+	height: 280px
   }
   input {
     font-size: 1.8rem
@@ -2546,6 +2553,9 @@ table tr td {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     border-radius: 8px
   }
+  .labelform {
+    margin: 30px 5px 0px;
+  }
   .buttons {
     margin: 12px 12px;
     display: inline-block
@@ -2570,11 +2580,15 @@ table tr td {
   .share {
     width: 30px
   }
+  .top-buttons {
+    padding-top: 0px
+  }
   .btn + .btn {
     margin-right: 0;
   }
   .btn_large {
     max-width: 352px;
+	padding-bottom: 10px
   }
   .btn .text_center1 {
     margin: 10px 142px;
@@ -2602,6 +2616,9 @@ table tr td {
   }
   .symbol {
     margin-top: 22%
+  }
+  input {
+    font-size: 1.6rem
   }
   h1.text_nav1 {
     margin: 17px 261px;
@@ -2685,9 +2702,6 @@ table tr td {
   }
 }
 @media (max-width : 960px) {
-  .inv {
-    width: 28%
-  }
   .btn .text_center5 {
     margin: 41px 44px;
     font-size: 2.4rem
@@ -2707,6 +2721,9 @@ table tr td {
 @media (max-width : 767px) {
   .SMSContentCSS {
     font-size: 10px
+  }
+  .labelform {
+    margin: 30px 5px 0px;
   }
   .tittle {
     -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
@@ -2735,7 +2752,7 @@ table tr td {
     background-image: url("img/bg_phone.jpg");
   }
   .process {
-    margin: 58.5% 4.2% 0 4.2%;
+    margin: 57% 6.5% 0 6.5%;
     width: 92%
   }
   .process h1 {
@@ -3193,7 +3210,8 @@ table tr td {
     font-size: 3pt
   }
   .btn_large {
-    padding-top: 20px
+    padding-top: 20px;
+    padding-bottom: 5px
   }
   input {
     border-radius: 8px
@@ -3319,9 +3337,6 @@ table tr td {
   }
   .inv {
     width: 26%
-  }
-  .labelform {
-    margin: 15px 5px
   }
   .btn .text_center3 {
     margin: 17.4% 32%;
