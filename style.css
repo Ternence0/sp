@@ -125,7 +125,11 @@ p {
   color: #666;
   font-size: 2.286rem;
   line-height: 1.5;
-  margin: 0 0 10px 5px
+  /margin: 0 0 10px 5px
+}
+tr td a p {
+  width: 100%;
+  margin-top: 8.5%
 }
 button a {
   display: block;
@@ -559,19 +563,13 @@ li {
 }
 .process .text-center {
   display: flex;
-  /display: -ms-flexbox;
-  /display: -moz-box;
-  /display: box;
-}
-.section-2 .text-center {
-  display: -ms-flexbox;
-  display: -moz-box;
 }
 .section-2 .note .text-center {
   display: inline-block
 }
 .text-center.buttons.padd, .little_nav.text-center {
-  display: inline
+  display: inline;
+  position: relative
 }
 .QA .text-center {
   display: block;
@@ -589,7 +587,6 @@ li {
 .clearfix {
   clear: left;
   clear: right;
-  /display: inline-block;
   zoom: 1;
 }
 .clearfix:after, .clearfix:before {
@@ -597,9 +594,11 @@ li {
   display: table;
 }
 .clearfix:after {
-  /display: inline-block;
   clear: left;
   clear: right;
+}
+.modal-header {
+  background-color: #045cb3 !important
 }
 table {
   table-layout: fixed;
@@ -609,9 +608,6 @@ table img {
 }
 .clean img {
   vertical-align: inherit
-}
-.wrap {
-  /margin-top: 80px;
 }
 h2.title {
   font-size: 3.6rem;
@@ -834,9 +830,6 @@ h2.word {
   background-clip: padding-box;
 }
 @media(max-width: 1280px) and (min-width: 992px) {
-  .SMSContentCSS {
-    font-size: 20px
-  }
   .index .insurance .wording {
     padding: 20px;
   }
@@ -1718,6 +1711,9 @@ img.icon :hover {
   margin: 20px 20px;
   display: inline-block
 }
+.modal-body {
+  padding: 25px 25px 5px 25px
+}
 .btn {
   font-size: 1.286rem;
   min-width: 177px;
@@ -1748,7 +1744,7 @@ img.icon :hover {
 }
 .share {
   display: inline-table;
-  padding: 45px 0px 10px 0px
+  padding: 30px 0 10px 0
 }
 .btn_small {
   transform: scale(1, 1);
@@ -1775,7 +1771,7 @@ a.btn-default {
 }
 .btn a {
   color: #fff;
-  display: inline;
+  display: block
 }
 .btn a:hover, .btn a:focus, .btn a:active {
   color: #fff;
@@ -1827,6 +1823,16 @@ a.btn-default {
   background-color: #ffffff;
   border-radius: 10px
 }
+.pc {
+  display: inherit
+}
+.phone {
+  display: none
+}
+.SMSContentCSS {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
 .text_center1, .text_center2, .text_center3, .text_center4, .text_center5, .text_center6, .text_center7, .text_nav1, .text_nav2, .text_nav3, .text_nav4, .text_nav5, .text_nav6 {
   position: absolute;
   z-index: 1
@@ -1846,30 +1852,31 @@ a.btn-default {
   font-size: 4.428rem
 }
 .btn .text_center3 {
-  line-height: 2;
-  margin: 40px 120px;
+  font-size: 2.3rem;
   color: white;
-  font-size: 2.4rem;
-  font-weight: 800
+  font-weight: 800;
+  width: 100%;
+  line-height: 3.8
 }
 .btn .text_center4 {
-  margin: 42px 69px;
   color: white;
-  font-size: 2.1rem;
-  font-weight: 800
+  font-size: 2rem;
+  font-weight: 800;
+  width: 100%;
+  line-height: 2.4;
 }
 .btn .text_center5 {
-  margin: 45px 75px;
   color: white;
   font-size: 2.7rem;
   font-weight: 800;
   letter-spacing: -0.03em
 }
 .btn .text_center6 {
-  margin: 32px 88px;
   color: white;
-  font-size: 2rem;
-  font-weight: 800
+  font-size: 1.8rem;
+  font-weight: 800;
+  width: 100%;
+  line-height: 1.6
 }
 .btn .text_center7 {
   line-height: 3;
@@ -1880,47 +1887,56 @@ a.btn-default {
 }
 h1.text_nav1 {
   line-height: 2;
-  margin: 23px 519px;
   color: #055CB3;
   font-size: 4rem;
-  font-weight: 900
+  font-weight: 900;
+  width: 100%
 }
 p.text_nav1 {
-  margin: 116px 246px;
   color: #928000;
   font-size: 3.1rem;
-  font-weight: 600
+  font-weight: 600;
+  margin-top: 105px;
+  width: 100%
 }
 h1.text_nav2 {
-  margin: 18px 506px;
-  color: #055CB3;
-  font-size: 4.2rem;
-  font-weight: 900
-}
-h1.text_nav3 {
-  margin: 40px 536px;
-  color: #055CB3;
-  font-size: 4.2rem;
-  font-weight: 900
-}
-h1.text_nav4 {
-  line-height: 2;
-  margin: 9px 440px;
   color: #055CB3;
   font-size: 4rem;
-  font-weight: 900
+  font-weight: 900;
+  width: 100%
+}
+h1.text_nav3 {
+  margin-top: 15px;
+  line-height: 2;
+  color: #055CB3;
+  font-size: 4rem;
+  font-weight: 900;
+  width: 100%
+}
+h1.text_nav4 {
+  line-height: 1.9;
+  color: #055CB3;
+  font-size: 3.6rem;
+  font-weight: 900;
+  width: 100%
 }
 p.text_nav4 {
-  margin: 95px 324px;
   color: #697B88;
-  font-size: 3.1rem;
-  font-weight: 600
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-top: 95px;
+  width: 100%
 }
 h1.text_nav5 {
-  margin: 40px 536px;
+  margin-top: 15px;
+  line-height: 2;
   color: #055CB3;
-  font-size: 4.2rem;
-  font-weight: 900
+  font-size: 4rem;
+  font-weight: 900;
+  width: 100%
+}
+h1.text_nav6 {
+  color: #055CB3
 }
 .p_hight {
   margin-top: -3vw
@@ -1936,7 +1952,6 @@ h1.text_nav5 {
 .process h1 {
   font-weight: 900;
   font-size: 2vw;
-  padding-left: 5px;
   margin-left: 0;
   margin-right: 0
 }
@@ -1980,19 +1995,12 @@ label {
   padding-left: 0;
   padding-right: 0
 }
-.center_left {
-  position: absolute;
-  margin: 30% 25.2%;
-  font-size: 2.286rem
-}
-.center_right {
-  position: absolute;
-  margin: 28% 16.2%;
-  font-size: 2.286rem
-}
 p.center_left, p.center_right {
+  position: absolute;
   font-size: 2.2rem;
   font-weight: 600;
+  width: 100%;
+  margin: 27% 0
 }
 .table tr, .table td {
   padding: 7px 0;
@@ -2065,7 +2073,13 @@ table tr td {
   display: none;
 }
 .caption {
-  border-radius: 15px
+  border-radius: 15px 15px 0 0;
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+}
+.caption2 {
+  border-radius: 15px;
 }
 .top-buttons {
   display: flow-root;
@@ -2096,6 +2110,9 @@ table tr td {
 .inv {
   width: 30%
 }
+.narrow {
+	margin-bottom:20px
+}
 .cop_logo {
   margin: 12px auto;
   max-height: 52px
@@ -2113,17 +2130,17 @@ table tr td {
   text-align: left
 }
 .invcode {
-  font-family: "jf", "cwTeXYen", "Noto Sans CJK", "Courier New", monospace, sans-serif;
+  font-family: "cwTeXYen", "Noto Sans CJK", "Courier New", monospace, sans-serif;
   font-weight: 900;
   display: inline-block;
-  height: 330px;
-  width: 500px;
+  height: 320px;
+  width: 100%;
   border: 1px solid #045CB3;
   border-radius: 12px;
   margin: 5px 5px;
   text-align: center;
-  font-size: 30pt;
-  letter-spacing: 0.05em
+  font-size: 4rem;
+  letter-spacing: -0.02em
 }
 .table_schedule h2 {
   font-size: 2.4rem
@@ -2217,9 +2234,6 @@ table tr td {
 }
 /*------------------------------------------------------------------------------*/
 @media (max-width : 1490px) {
-  .SMSContentCSS {
-    font-size: 20px
-  }
   .btn_large {
     max-width: 684px;
     display: inline-block
@@ -2259,8 +2273,8 @@ table tr td {
     display: inline-block
   }
   .products {
-    margin-bottom: -100px;
-    padding-bottom: 80px;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
   }
   .container {
     width: 1000px
@@ -2273,14 +2287,18 @@ table tr td {
   }
   .share {
     display: inline-table;
-    padding: 28px 0px 10px 0px
+    padding: 20px 0px 10px 0px
+  }
+  .link {
+    width: 65px
   }
   .process p {
     letter-spacing: -0.06rem;
     font-size: 1.5vw
   }
   .invcode {
-	height: 300px
+	height: 300px;
+	font-size: 3.2rem
   }
   h1.word {
     font-size: 2.4rem
@@ -2316,46 +2334,38 @@ table tr td {
     font-size: 3.28rem
   }
   .btn .text_center3 {
-    margin: 28px 86px;
-    font-size: 1.9rem
+    font-size: 1.8rem;
+    line-height: 3.3
+  }
+  .btn .text_center4 {
+    line-height: 2.2;
+    font-size: 1.8rem
   }
   h1.text_nav1 {
-    margin: 20px 387px;
     font-size: 3.1rem
   }
   p.text_nav1 {
-    margin: 90px 182px;
-    font-size: 2.35rem
+    font-size: 2.35rem;
+	margin-top: 85px
   }
   h1.text_nav4 {
-    margin: 8px 325px;
-    font-size: 3.1rem
+    font-size: 3rem;
+	line-height: 1.7
   }
   p.text_nav4 {
-    margin: 74px 242px;
-    font-size: 2.35rem
+    font-size: 2.2rem;
+	margin-top: 75px
   }
   h1.text_nav2 {
-    margin: 12px 376px;
-    font-size: 3rem
+    font-size: 2.8rem
   }
   h1.text_nav3 {
-    margin: 35px 410px;
     font-size: 3rem
   }
   h1.text_nav5 {
-    margin: 35px 410px;
     font-size: 3rem
   }
-  .btn .text_center4 {
-    margin: 38px 67px;
-    font-size: 2rem
-  }
-  .btn .text_center6 {
-    margin: 30px 83px;
-    font-size: 1.88rem
-  }
-  .btn .text_center7 {
+ .btn .text_center7 {
     margin: 20px 191px;
     font-size: 3.28rem
   }
@@ -2374,16 +2384,12 @@ table tr td {
     border-radius: 28px;
     width: 72%
   }
-  .center_left {
-    position: absolute;
-    margin: 30% 24%;
-  }
-  .center_right {
-    position: absolute;
-    margin: 28% 14.6%;
-  }
 }
 @media (max-width: 1200px) {
+  .SMSContentCSS {
+    font-size: 1.6rem;
+    line-height: 1.3
+  }
   .btn_large {
     max-width: 458px;
     display: inline-block
@@ -2413,7 +2419,8 @@ table tr td {
     font-size: 2.8rem
   }
   .invcode {
-	height: 280px
+	height: 280px;
+	font-size: 3rem
   }
   input {
     font-size: 1.8rem
@@ -2429,11 +2436,15 @@ table tr td {
     font-size: 2.8rem
   }
   .btn .text_center3 {
-    margin: 25px 76px;
-    font-size: 1.7rem
+    font-size: 1.55rem;
+	width: 100%;
+	line-height: 3.3
   }
   .narrow img {
     max-width: 90%;
+  }
+  .caption {
+    border-radius: 10px 10px 0 0
   }
   .caption {
     border-radius: 10px
@@ -2441,50 +2452,40 @@ table tr td {
   .qa {
     font-size: 1.6rem;
   }
-  .center_left {
-    margin: 27% 20.4%;
-  }
-  .center_right {
-    margin: 28% 10.44%;
-  }
   h1.text_nav1 {
-    margin: 19px 348px;
     font-size: 2.74rem;
   }
   p.text_nav1 {
-    margin: 81px 165px;
     font-size: 2.1rem;
+	margin-top: 75px
   }
   h1.text_nav2 {
-    margin: 11px 336px;
-    font-size: 2.8rem
+    font-size: 2.54rem;
+	line-height: 0.8
   }
   h1.text_nav3 {
-    margin: 31px 363px;
     font-size: 2.8rem
   }
   h1.text_nav5 {
-    margin: 31px 363px;
     font-size: 2.8rem
   }
   h1.text_nav4 {
-    margin: 10px 294px;
-    font-size: 2.74rem;
+    font-size: 2.6rem;
+	line-height: 1.6
   }
   p.text_nav4 {
-    margin: 67px 218px;
-    font-size: 2.1rem;
+	line-height: 1
   }
   .btn .text_center4 {
-    margin: 35px 60px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 1.8
   }
   .btn .text_center6 {
-    margin: 31px 97px;
-    font-size: 2.1rem
+    font-size: 1.8rem;
+    line-height: 1.75	
   }
   .btn .text_center7 {
-    margin: 20px 170px;
+    margin: 20px 170px;	
     font-size: 2.8rem
   }
   .table_form {
@@ -2533,7 +2534,7 @@ table tr td {
     max-height: 42px;
   }
   .invcode {
-    font-size: 36pt
+    font-size: 3rem
   }
   .table_schedule h2 {
     font-size: 2rem
@@ -2542,11 +2543,15 @@ table tr td {
     font-size: 1.6rem
   }
   .share {
-    padding: 22px 0px 10px 0px;
+    padding: 16px 0 10px 0;
     width: 40px
   }
 }
 @media(max-width: 991px) and (min-width: 767px) {
+  .SMSContentCSS {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
   .tittle {
     -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
@@ -2590,17 +2595,17 @@ table tr td {
     max-width: 352px;
 	padding-bottom: 10px
   }
-  .btn .text_center1 {
+  .btn .text_center1{
     margin: 10px 142px;
     font-size: 2.4rem
   }
-  .btn .text_center2 {
+  .btn .text_center2{
     margin: 10px 130px;
     font-size: 2.4rem
   }
   .btn .text_center3 {
-    margin: 19px 58px;
-    font-size: 1.2rem
+    font-size: 1.1rem;
+    line-height: 3.7
   }
   p.center_left, p.center_right {
     font-size: 1.24rem
@@ -2617,51 +2622,51 @@ table tr td {
   .symbol {
     margin-top: 22%
   }
+  .invcode {
+    font-size: 2.4rem
+  }
   input {
     font-size: 1.6rem
   }
   h1.text_nav1 {
-    margin: 17px 261px;
     font-size: 2rem
   }
   p.text_nav1 {
-    margin: 64px 125px;
-    font-size: 1.56rem
+    font-size: 1.56rem;
+	margin-top: 62px
   }
   h1.text_nav4 {
-    margin: 10px 222px;
     font-size: 2rem
   }
   p.text_nav4 {
-    margin: 54px 164px;
-    font-size: 1.56rem
+    font-size: 1.4rem;
+	margin-top: 60px
   }
   h1.text_nav2 {
-    margin: 8px 252px;
-    font-size: 2.1rem
+    font-size: 2rem;
+	line-height: 0.6
   }
   h1.text_nav3 {
-    margin: 27px 272px;
-    font-size: 2.1rem
+    font-size: 2.1rem;
+	line-height: 1.7
   }
-  h1.text_nav5 {
-    margin: 27px 272px;
-    font-size: 2.1rem
+  h1.text_nav5 {    
+	font-size: 2.1rem;
+	line-height: 1.7
   }
   .btn .text_center4 {
-    margin: 27px 44px;
-    font-size: 1.35rem
+    font-size: 1rem;
+    line-height: 1.3
   }
   .btn .text_center5 {
-    margin: 38px 43px;
     font-size: 2.1rem
   }
   .btn .text_center6 {
-    margin: 25.6px 80.2px;
-    font-size: 1.7rem
+    font-size: 1.3rem;
+    line-height: 1.2
   }
   .btn .text_center7 {
-    margin: 10px 124px;
+    margin: 10px 118px;
     font-size: 2.4rem
   }
   .pic_hidden {
@@ -2694,16 +2699,10 @@ table tr td {
   .sec1_a_blkA {
     border-radius: 18px
   }
-  .center_left {
-    margin: 29% 21.6%;
-  }
-  .center_right {
-    margin: 28% 11.2%;
-  }
 }
 @media (max-width : 960px) {
   .btn .text_center5 {
-    margin: 41px 44px;
+    /margin: 41px 44px;
     font-size: 2.4rem
   }
   h1 {
@@ -2713,17 +2712,32 @@ table tr td {
     font-size: 1.3rem
   }
 }
-@media(min-width: 767px) {
+@media ( max-width: 891px ) {
+  .SMSContentCSS {
+    font-size: 1.24rem;
+    line-height: 1.3
+  }
+}
+@media ( min-width: 767px) {
   .btn_small {
     margin: .67em -0.67em
   }
 }
 @media (max-width : 767px) {
   .SMSContentCSS {
-    font-size: 10px
+    font-size: 2vw
+  }
+  .pc {
+	  display: none
+  }
+  .phone {
+      display: inherit
   }
   .labelform {
-    margin: 30px 5px 0px;
+    margin: 15px 5px 0px
+  }
+  .narrow {
+      margin-bottom: 0px
   }
   .tittle {
     -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
@@ -2780,13 +2794,7 @@ table tr td {
     text-align: center
   }
   p.center_left, p.center_right {
-    font-size: 4.2vmin
-  }
-  .center_left {
-    margin: 30% 22%
-  }
-  .center_right {
-    margin: 29% 12%
+    font-size: 4vw
   }
   .symbol {
     display: none;
@@ -2802,7 +2810,7 @@ table tr td {
     max-height: 30px
   }
   .invcode {
-    font-size: 12pt;
+    font-size: 4vw;
 	height: 214px
   }
   .link_align {
@@ -2842,6 +2850,9 @@ table tr td {
   .btn_small a img {
     max-width: 100%
   }
+  .btn_small.narrow a img {
+      padding-left: 10vw
+  }
   .btn_small a img .index .collection {
     padding: 20px 0 100px 0
   }
@@ -2867,66 +2878,69 @@ table tr td {
     margin-top: 6px
   }
   .btn.btn {
-    margin-right: 0;
+    margin-right: -4vw;
   }
   .btn_large {
     max-width: 45%;
   }
   .btn .text_center1 {
     margin: 2.1% 38%;
-    font-size: 4.4vmin
+    font-size: 4.4vw
   }
   .btn .text_center2 {
     margin: 2.1% 35.2%;
-    font-size: 4.4vmin
+    font-size: 4.4vw
   }
   .btn .text_center3 {
-    margin: 11.4% 36.4%;
-    font-size: 2.6vmin
+    font-size: 2.4vw;
+    line-height: 3.7
   }
   h1.text_nav1 {
-    margin: 2.4% 34.2%;
-    font-size: 3.4vmin
+    font-size: 3.4vw;
+	line-height: 1.5
   }
   p.text_nav1 {
-    margin: 8.2% 15.8%;
-    font-size: 2.78vmin
+    font-size: 2.78vw;
+	margin-top: 8.5vw
   }
   h1.text_nav4 {
-    margin: 1.8% 28.4%;
-    font-size: 3.4vmin
+    font-size: 3.4vw;
+    line-height: 1.4
   }
   p.text_nav4 {
-    margin: 7.3% 20.1%;
-    font-size: 2.78vmin
+    font-size: 2.6vw;
+    margin-top: 8vw
   }
   h1.text_nav2 {
-    margin: 1% 32.4%;
-    font-size: 3.7vmin
+    font-size: 3.4vw;
+    line-height: 1.3;
+    margin-top: 10px
   }
   h1.text_nav3 {
-    margin: 3.7% 34.3%;
-    font-size: 3.7vmin
+    font-size: 4vw;
+    line-height: 1.6
   }
   h1.text_nav5 {
-    margin: 3.9% 40.4%;
-    font-size: 3.7vmin
+    font-size: 4vw;
+    line-height: 1.6
   }
   .btn .text_center4 {
-    margin: 52px 0 0 30%;
-    font-size: 5vmin
+    font-size: 5vw;
+    line-height: 2.7;
+    padding-left: 8.5vw
   }
   .btn .text_center5 {
-    margin: 12.4% 25%;
-    font-size: 1.7rem
+    font-size: 1.7rem;
+	line-height: 1.7
   }
   .btn .text_center6 {
-    margin: 9.7% 0 0 41.4%;
-    font-size: 7vmin
+    font-size: 7vmin;
+    padding-left: 10vw;
+    line-height: 2.2
   }
   .btn .text_center7 {
     margin: 2.1% 34%;
-    font-size: 4.4vmin
+    font-size: 4.4vw
   }
   .pic_show {
     padding-left: 4%;
@@ -2973,7 +2987,7 @@ table tr td {
     max-height: 28px
   }
   .invcode {
-    font-size: 12pt;
+    font-size: 3.6vw;
     height: 200px
   }
   .table_schedule h2 {
@@ -2985,29 +2999,14 @@ table tr td {
   h1 {
     font-size: 1.4rem
   }
-  h1.text_nav5 {
-    margin: 4.2% 38.7%;
-  }
   h1.word {
     font-size: 1.4rem
   }
   .buttons {
     margin: 10px 10px
   }
-  .btn_small a img {
-    max-width: 90%
-  }
   .precautions h2 {
     font-size: 2.94vw
-  }
-  p.center_left, p.center_right {
-    font-size: 3.8vmin
-  }
-  .center_left {
-    margin: 32% 24%
-  }
-  .center_right {
-    margin: 30% 14%
   }
   .link {
     width: 40px;
@@ -3017,20 +3016,19 @@ table tr td {
     padding-left: 5px
   }
   .btn .text_center3 {
-    margin: 10% 36.8%;
-    font-size: 2.3vmin
+    font-size: 2.2vw;
+    line-height: 4.4
   }
   .btn .text_center4 {
-    margin: 10.4% 30.4%;
-    font-size: 5vmin
+    font-size: 5vw;
+	line-height: 2.4
   }
   .btn .text_center5 {
-    margin: 12.4% 14%;
-    font-size: 1.48rem
+    font-size: 1.48rem;
+	line-height: 1.8
   }
   .btn .text_center6 {
-    margin: 12.4% 43.4%;
-    font-size: 7vmin
+	font-size: 6vw;
   }
   .pic_show {
     padding-left: 2.4%;
@@ -3063,34 +3061,31 @@ table tr td {
   }
 }
 @media (max-width : 540px) {
-  p.center_left, p.center_right {
-    font-size: 3.4vmin
-  }
   .precautions h2 {
     font-size: 2.94vw
   }
-  .center_left {
-    margin: 32% 25.8%
+  h1.text_nav2 {
+    font-size: 3.6vw;
+    line-height: 1.1
   }
-  .center_right {
-    margin: 31.2% 17.6%
+  h1.text_nav4 {
+    font-size: 3vw;
+    line-height: 1
   }
   .btn .text_center3 {
-    margin: 11.4% 36.8%;
-    font-size: 2.3vmin
+    font-size: 2vw;
+    line-height: 4.6
   }
   .btn .text_center4 {
-    margin: 11.4% 28.4%;
-    font-size: 5vmin
+	font-size: 4.4vw;
+	line-height: 2.2
   }
   .btn .text_center5 {
-    margin: 12.4% 12.8%;
     font-size: 1.22rem;
     letter-spacing: -0.03rem
   }
   .btn .text_center6 {
-    margin: 13.4% 43.4%;
-    font-size: 7vmin
+    line-height: 2;
   }
   .pic_show {
     padding-left: 1.8%;
@@ -3104,24 +3099,19 @@ table tr td {
   }
 }
 @media (max-width : 480px) {
+  .SMSContentCSS {
+    font-size: 1.6vw;
+    line-height: 1
+  }
   .tittle {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
     border-radius: 4px
   }
-  p.center_left, p.center_right {
-    font-size: 3.2vmin
-  }
   .col-xs-12.rule {
     padding-left: 5px;
     padding-right: 5px
-  }
-  .center_left {
-    margin: 32% 27.2%
-  }
-  .center_right {
-    margin: 31% 18.2%
   }
   input {
     font-size: 1rem
@@ -3207,7 +3197,7 @@ table tr td {
   .invcode {
     height: 128px;
     border-radius: 6px;
-    font-size: 3pt
+	font-size: 3.4vw
   }
   .btn_large {
     padding-top: 20px;
@@ -3253,44 +3243,29 @@ table tr td {
     width: 98%;
   }
   .btn .text_center3 {
-    margin: 14.4% 34%;
-    font-size: 2.6vmin
+    font-size: 2vw
   }
   h1.text_nav1 {
-    margin: 3.4% 33%;
-    font-size: 3.3vmin
+    font-size: 3.6vw;
+    line-height: 1.3
   }
   p.text_nav1 {
-    margin: 9% 15.8%;
     font-size: 2.65vmin
-  }
-  h1.text_nav4 {
-    margin: 2.4% 28.1%;
-    font-size: 3.3vmin
-  }
-  p.text_nav4 {
-    margin: 7.6% 20.7%;
-    font-size: 2.65vmin
-  }
-  h1.text_nav2 {
-    margin: 1% 31.3%;
-    font-size: 3.5vmin
   }
   h1.text_nav3 {
-    margin: 4.6% 34.1%;
-    font-size: 3.5vmin
+    font-size: 3.4vw
   }
   h1.text_nav5 {
-    margin: 5% 38.6%;
-    font-size: 3.5vmin
+    font-size: 3.4vw
+  }
+  .btn .text_center4 {
+	line-height: 2
   }
   .btn .text_center5 {
-    margin: 12.4% 14.2%;
     font-size: 3.7vmin
   }
   .btn .text_center6 {
-    margin: 13.4% 43.4%;
-    font-size: 7vmin
+    line-height: 1.8
   }
   .pic_show {
     padding-left: 0.75%;
@@ -3321,31 +3296,27 @@ table tr td {
 }
 @media (max-width : 440px) {
   .btn .text_center3 {
-    margin: 16% 33%;
-    font-size: 2.4vmin
+    font-size: 2.7vw;
+    line-height: 4.4;
+    letter-spacing: -0.05vw
   }
 }
 @media (max-width : 409px) {
   p.center_left, p.center_right {
-    font-size: 3vmin
-  }
-  .center_left {
-    margin: 31% 0 0 28.4%
-  }
-  .center_right {
-    margin: 30.3% 0 0 20.4%
+    font-size: 3.6vw;
+	margin: 28% 0
   }
   .inv {
     width: 26%
   }
-  .btn .text_center3 {
-    margin: 17.4% 32%;
-    font-size: 2.6vmin;
-    letter-spacing: -0.1vw
+  .btn .text_center4 {
+    line-height: 1.7;
   }
   .btn .text_center5 {
-    margin: 14% 14%;
     font-size: 3.6vmin
+  }
+  .btn .text_center6 {
+    line-height: 1.6
   }
   .process {
     margin: 59% 3.5% 0 3.5%;
@@ -3357,27 +3328,17 @@ table tr td {
   .precautions h2 {
     font-size: 2.8vw
   }
-  h1.text_nav1 {
-    margin: 4% 32%;
-    font-size: 3vmin
-  }
-  p.text_nav1 {
-    margin: 9% 8.5%;
-    font-size: 3vmin
-  }
-  h1.text_nav4 {
-    margin: 2.8% 28.5%;
-    font-size: 3vmin
-  }
   p.text_nav4 {
-    margin: 7.7% 17.4%;
-    font-size: 2.8vmin
+    font-size: 2.4vw;
+    margin-top: 8vw
   }
   h1.text_nav3 {
-    margin: 4.7% 33.5%;
+    font-size: 2.6vw;
+	line-height: 1.5
   }
   h1.text_nav5 {
-    margin: 5.1% 38.2%;
+    font-size: 2.6vw;
+	line-height: 1.5
   }
   .sec1_a_blkA {
     margin-left: 20px;
@@ -3390,30 +3351,7 @@ table tr td {
     text-indent: -0.7rem
   }
 }
-@media (max-width : 380px) {
-  .SMSContentCSS {
-    font-size: 8px
-  }
-  .center_left {
-    margin: 31% 0 0 26.9%
-  }
-  .center_right {
-    margin: 30.3% 0 0 18.9%
-  }
-}
 @media (max-width : 360px) {
-  .SMSContentCSS {
-    font-size: 8px
-  }
-  p.center_left, p.center_right {
-    font-size: 3vmin
-  }
-  .center_left {
-    margin: 31% 24%
-  }
-  .center_right {
-    margin: 28% 15.2%
-  }
   .banner {
     margin-top: -52px
   }
@@ -3425,7 +3363,6 @@ table tr td {
   .invcode {
     height: 111px;
     border-radius: 4px;
-    font-size: 3pt
   }
   .labelfomat {
     border-radius: 4px;
@@ -3435,6 +3372,9 @@ table tr td {
   }
   .process h1 {
     padding-left: 0;
+  }
+  .index .serialnumber {
+    padding: 20px 20px
   }
   .inv {
     width: 24%
@@ -3448,11 +3388,9 @@ table tr td {
   h1.word {
     font-size: 0.6rem
   }
-  h1.text_nav3 {
-    margin: 5% 32.5%;
-  }
-  h1.text_nav5 {
-    margin: 5.5% 38.2%;
+  h1.text_nav2 {
+    font-size: 2.6vmin;
+    line-height: 0.9
   }
   .precautions h2 {
     font-size: 2.5vw
@@ -3490,44 +3428,39 @@ table tr td {
     margin-right: 0
   }
   .btn .text_center1 {
-    margin: 3.6% 38%;
     font-size: 4.4vmin
   }
   .btn .text_center2 {
-    margin: 3.6% 35.2%;
-    font-size: 4.4vmin
+	margin: 3.6% 35.2%;
+    font-size: 4.4vw
   }
   .btn .text_center3 {
-    margin: 16.8% 31%;
-    font-size: 4vmin;
     letter-spacing: -0.1vw
+  }
+  .btn .text_center4 {
+    line-height: 1.4
   }
   .link_align .btn {
     min-width: 80%;
   }
   h1.text_nav1 {
-    margin: 4% 32%;
-    font-size: 2.6vmin
-  }
-  p.text_nav1 {
-    margin: 9% 7%;
-    font-size: 2.4vmin
+    font-size: 2.6vmin;
+	line-height: 1
   }
   h1.text_nav4 {
-    margin: 2.9% 26.6%;
-    font-size: 2.6vmin
-  }
-  p.text_nav4 {
-    margin: 7.5% 13.8%;
-    font-size: 2vmin
+	font-size: 2.2vw;
+    line-height: 0.7
   }
   .btn .text_center5 {
-    margin: 16% 15.6%;
-    font-size: 2.4vmin
+    font-size: 2.4vmin;
+	line-height: 2.3
+  }
+  .btn .text_center6 {
+    line-height: 1.4
   }
   .btn .text_center7 {
     margin: 3.6% 34%;
-    font-size: 4.4vmin
+    font-size: 4.4vw
   }
   .indent {
     margin-left: 1em;
@@ -3546,27 +3479,19 @@ table tr td {
   display: inline
 }
 .little_nav {
-  text-align: center;
+  position: relative;
+  display: inline
 }
 .little_nav:before {
   display: inline-block;
   vertical-align: middle;
 }
 @media (max-width : 320px) {
-  .SMSContentCSS {
-    font-size: 8px
-  }
-  p.center_left, p.center_right {
-    font-size: 2.8vmin
-  }
-  .center_left {
-    margin: 29% 23%
-  }
-  .center_right {
-    margin: 28% 8.2%
-  }
   .btn .text_center5 {
-    margin: 19.4% 9%;
-    font-size: 1.3vmin
+    font-size: 1.3vmin;
+	line-height: 2.6
+  }
+  .btn .text_center6 {
+	line-height: 1.2
   }
 }

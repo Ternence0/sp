@@ -125,12 +125,13 @@
 
                     </div>
                     <div class="modal-footer" style="text-align:center">
-                        <button type="button" id="SureLogin" onclick="SureLogin()" style="width:35%;font-size:20pt" >認證</button>
-                        <button type="button" id="Checkotp" onclick="Checkotp()" style="width:35%;font-size:20pt;display:none"  >確定</button>
-                        <button type="button" id="Closeotp" data-dismiss="modal" style="width:35%;font-size:20pt" >關閉</button>
+                        
+						<h5>請輸入認證碼</h5>  <input type="text"  id="OtpCode" name="OtpCode" value="" style="width:300px;height:30px;display:none;text-align:center">
                         <div id="showtime" style="font-size:medium"></div>
+						<button type="button" id="SureLogin" onclick="SureLogin()" style="width:30%;font-size:20pt" >認證</button>
+                        <button type="button" id="Checkotp" onclick="Checkotp()" style="width:30%;font-size:20pt;display:none">確定</button>
+                        <button type="button" id="Closeotp" data-dismiss="modal" style="width:30%;font-size:20pt" >關閉</button>
 
-                        <h5>請輸入認證碼</h5>  <input type="text"  id="OtpCode" name="OtpCode" value="" style="width:300px;height:30px;display:none;text-align:center">
 
                     </div>
                 </div><!-- /.modal-content -->
@@ -148,7 +149,7 @@
                    <span style="font-size:20px" id="MessageBody"></span>
                 </div>
                 <div class="modal-footer" style="text-align:center">
-                    <button type="button" data-dismiss="modal" style="width:35%;font-size:20pt"   >關閉</button>
+                    <button type="button" data-dismiss="modal" style="width:30%;font-size:20pt"   >關閉</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
